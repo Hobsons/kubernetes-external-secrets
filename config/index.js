@@ -29,7 +29,7 @@ const customResourceManager = new CustomResourceManager({
   logger
 })
 
-const secretsManagerClient = new AWS.SecretsManager(awsConfig.secretsManagerConfig)
+const secretsManagerClient = new AWS.SecretsManager({credentials: new AWS.TokenFileWebIdentityCredentials()})
 const secretsManagerBackend = new SecretsManagerBackend({ client: secretsManagerClient, logger })
 const systemManagerClient = new AWS.SSM(awsConfig.systemManagerConfig)
 const systemManagerBackend = new SystemManagerBackend({ client: systemManagerClient, logger })
