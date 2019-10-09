@@ -44,9 +44,11 @@ The following table lists the configurable parameters of the `kubernetes-externa
 | `image.repository`                   | kubernetes-external-secrets Image name                       | `godaddy/kubernetes-external-secrets`                   |
 | `image.tag`                          | kubernetes-external-secrets Image tag                        | `1.2.0`                                                 |
 | `image.pullPolicy`                   | Image pull policy                                            | `IfNotPresent`                                          |
+| `image.imagePullSecrets`                   | Image pull secret                                            | `{}`                                          |
 | `nameOverride`                   | Override the name of app                                            | `nil`                                          |
 | `fullnameOverride`                   | Override the full name of app                                            | `nil`                                          |
 | `rbac.create`                        | Create & use RBAC resources                                  | `true`                                                  |
+| `securityContext.fsGroup`              | Security context for the container	        | `{}`                                                  |
 | `serviceAccount.create`              | Whether a new service account name should be created.        | `true`                                                  |
 | `serviceAccount.name`                | Service account to be used.                                  | automatically generated
 | `podAnnotations`                     | Annotations to be added to pods                              | `{}`                                                    |
